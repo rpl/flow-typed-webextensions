@@ -1,0 +1,55 @@
+// Comments should be stripped
+
+[
+  {
+    "namespace": "fakeNamespace",
+    "description": "fake namespace description",
+    "permissions": ["fakePermission"],
+    "types": [
+      {
+        "id": "FakeType",
+        "type": "string",
+        "enum": ["enum-value-01", "enum-value-02"]
+      }
+    ],
+    "functions": [
+      {
+        "name": "fakeCall",
+        "type": "function",
+        "description": "fake method description",
+        "async": "callback",
+        "parameters": [
+          {
+            "name": "fakeParam",
+            "type": "integer",
+            "minimum": 3,
+            "description": "fake param description"
+          },
+          {
+            "name": "callback",
+            "type": "function",
+            "parameters": [
+              {
+                "name": "fakeResult",
+                "$ref": "FakeType"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "events": [
+      {
+        "name": "onFakeEvent",
+        "type": "function",
+        "description": "fake event description",
+        "parameters": [
+          {
+            "name": "newFakeEventData",
+            "$ref": "FakeType"
+          }
+        ]
+      }
+    ]
+  }
+]

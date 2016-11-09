@@ -1,0 +1,3 @@
+flow-typed/
+definitions/npm/flow-typed-webextensions_*/flow_*/*.js
+!definitions/**/test_*.js

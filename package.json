@@ -1,0 +1,50 @@
+{
+  "name": "flow-typed-webextensions",
+  "version": "0.1.0",
+  "description": "generate flow types from WebExtensions API schema files",
+  "main": "src/lib/index.js",
+  "bin": {
+    "flow-coverage-report": "./bin/flow-typed-webextensions.js"
+  },
+  "files": [
+    "src/**/*",
+    "bin/*",
+    "flow-typed/**/*"
+  ],
+  "scripts": {
+    "ava:watch": "ava --watch --verbose",
+    "flow-coverage-report": "flow-coverage-report -t text -t html -i 'src/**/*.js' --threshold 70",
+    "flow-typed:build": "node bin/flow-typed-webextensions.js -m test/fixtures/mozilla-central -o definitions/npm/flow-typed-webextensions_v0.1.0/flow_v0.32.x-/flow-typed-webextensions_v0.1.0.js",
+    "flow-typed:install": "flow-typed install",
+    "flow-typed:run-tests": "flow-typed run-tests",
+    "test": "eslint . && flow check && nyc ava --verbose"
+  },
+  "keywords": [
+    "flow",
+    "flowtype",
+    "webextensions"
+  ],
+  "author": "Luca Greco <lgreco@mozilla.com>",
+  "homepage": "https://github.com/rpl/flow-typed-webextensions",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rpl/flow-typed-webextensions.git"
+  },
+  "license": "MPL-2.0",
+  "dependencies": {
+    "strip-json-comments": "2.0.1",
+    "tsort": "0.0.1",
+    "yargs": "6.3.0"
+  },
+  "devDependencies": {
+    "ava": "^0.16.0",
+    "babel-eslint": "7.1.0",
+    "eslint": "3.9.1",
+    "eslint-plugin-flow-typed": "1.0.1",
+    "eslint-plugin-flowtype": "2.25.0",
+    "flow-bin": "^0.34.0",
+    "flow-coverage-report": "^0.2.0",
+    "flow-typed": "^2.0.0",
+    "nyc": "^8.4.0"
+  }
+}

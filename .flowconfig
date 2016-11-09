@@ -1,0 +1,17 @@
+[ignore]
+.*/definitions/.*
+.*/node_modules/.*
+./flow-covereage/.*
+.*/coverage/.*
+
+[include]
+
+[libs]
+flow-typed/
+
+[options]
+suppress_comment=\\(.\\|\n\\)*\\$FlowIssue
+suppress_comment=\\(.\\|\n\\)*\\$ExpectError
+
+[version]
+^0.34.0
