@@ -1,0 +1,23 @@
+language: node_js
+sudo: false
+node_js:
+- '4'
+- '6'
+
+script:
+- npm run flow-typed:install
+- npm run test
+- npm run flow-coverage-report
+- npm run flow-typed:build
+- npm run flow-typed:run-tests
+
+# TODO(rpl): add publish-coverage npm script.
+# after_script: npm run publish-coverage
+
+# TODO(rpl): configure irc notifications once readt.
+# notifications:
+#   irc:
+#     channels:
+#     - irc.mozilla.org#webextensions
+#     on_success: change
+#     on_failure: always
