@@ -9,6 +9,8 @@ script:
 - npm run test
 - npm run flow-coverage-report
 - npm run flow-typed:build
+### Print the differences in the generated flow types definitions
+- git diff definitions/
 - npm run flow-typed:run-tests
 
 # TODO(rpl): add publish-coverage npm script.
